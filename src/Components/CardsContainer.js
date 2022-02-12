@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Cards from './Cards';
+import Spinner from './Spinner';
 
 function CardsContainer() {
 const [details,setDetails] = useState([]); // use a null array,otherwise error will thrown when mapping.
@@ -13,7 +14,7 @@ useEffect(()=>{
     setLoad(false);
   })
 },[])
- return loading ? (  <h1>loading</h1> ) : ( <div className='cards'>
+ return loading ? ( <Spinner/> ) : ( <div className='cards'>
       {details.map((characters)=>{
         return(
            <Cards key={characters.char_id} characters={characters}/>
