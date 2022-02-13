@@ -11,7 +11,7 @@ const [loading,setLoad] = useState(true);
 const [query,setQuery] = useState('');
 useEffect(()=>{
   axios.get(`https://www.breakingbadapi.com/api/characters?name=${query}`).then((response)=>{
-    // console.log(response.data);
+    //  console.log(response.data);
     setDetails(response.data);
     setLoad(false);
   })

@@ -22,9 +22,13 @@ function Cards({characters}) {
           <li>
             <strong>Status:</strong> {characters.status}
           </li>
-          <li>
-            <strong>Occupation:</strong> {characters.occupation+" "}
-          </li>
+          
+            <strong>Occupation:-</strong> {characters.occupation.map((works,index)=>{
+              return( 
+                 <li key={index}>{works}</li>
+              )
+            })}
+          
         </ul>
       </div>
     </div>
